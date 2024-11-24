@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useRef } from 'react';
 import './App.css';
-
+import CustomInpunt from './components/CustomInput';
 function App() {
+  const inputRef = useRef()
+  const handleClear = () => {
+    inputRef.current.clear()
+  }
+  const handleFocus = () => {
+    inputRef.current.focus()
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>useImperativeHandle to send child to parent data in react</h1>
+      <CustomInpunt ref={inputRef}/>
+      <button onClick={handleFocus}>Focus</button>
+      <button onClick={handleClear}>Clear</button>
     </div>
   );
 }
