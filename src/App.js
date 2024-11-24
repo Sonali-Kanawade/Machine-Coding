@@ -3,6 +3,7 @@ import './App.css';
 import CustomInpunt from './components/CustomInput';
 function App() {
   const inputRef = useRef()
+  
   const handleClear = () => {
     inputRef.current.clear()
   }

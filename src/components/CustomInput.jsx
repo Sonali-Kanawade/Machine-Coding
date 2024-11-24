@@ -3,6 +3,7 @@ import { forwardRef, useImperativeHandle, useRef } from "react";
 
 const CustomInpunt = forwardRef((props, ref) => {
     const inputRef = useRef()
+    
     useImperativeHandle(ref, () => {
         return {
             focus: () => {
